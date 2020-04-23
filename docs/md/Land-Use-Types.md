@@ -6,7 +6,7 @@ Each type consists of a dictionary of attributes. The mnimum attributes contined
 
 ## Attribute Examples
 
-A single grid-cell may contain multiple LBCS and multiple NAICS on different floors or even on the same floor. Therefore, the value of each attribute is formatted as a list of lists. The upper-most list represents groups of floors. Each lower-level list represents the mix of uses within that floor-group. For example, the following represents the NAICS attribute for a grid cell where:
+A single grid-cell may contain multiple LBCS and multiple NAICS on different floors or even on the same floor. Therefore, the value of each attribute is formatted as a list of objects. The object in the list represents a grouping of floors starting with the lower-most floors. Each object contains the mix of uses within that floor-group. For example, the following represents the NAICS attribute for a grid cell where:
 - the lower 30% of floors are devoted to a mix of "541310" (architectural services) and "541330" (engineering services).
 - the upper 70% of floors and devoted to a mix of "23" (Construction), "42" (Wholesale) and "61" (Education).
 
@@ -17,12 +17,8 @@ A single grid-cell may contain multiple LBCS and multiple NAICS on different flo
       "P": 0.3,
       "use": [
         {
-          "P": 0.5,
-          "use": "541310"
-        },
-        {
-          "P": 0.5,
-          "use": "541330"
+          "0.5": "541310",
+          "0.5": "541330"
         }
       ]
     },
@@ -30,16 +26,9 @@ A single grid-cell may contain multiple LBCS and multiple NAICS on different flo
       "P": 0.7,
       "use": [
         {
-          "P": 0.3,
-          "use": "23"
-        },
-        {
-          "P": 0.4,
-          "use": "42"
-        },
-        {
-          "P": 0.3,
-          "use": "61"
+          "0.3": "23",
+          "0.4": "42",
+          "0.3": "61"
         }
       ]
     }
@@ -49,7 +38,7 @@ A single grid-cell may contain multiple LBCS and multiple NAICS on different flo
 
 The number of floors is independent of the type and specified separately by the user. Therefore, if the user assigns 10 floors to this grid cell, the lower 2 floors will be a mix of 541310 and 541330 and the upper 10 floors will be a mix of 23, 42 and 61.
 
-In most cases, the type specification will not require such a detailed level of partitioning of types. If for example, the grid cell has only a single usage type, the same data format will be used but the upper and lower level list will have length of 1. For example, the following represents the NAICS attribute for a grid cell solely devoted to "54" (Professional, Scientific and Technical Services).
+In most cases, the type specification will not require such a detailed level of partitioning of types. If for example, the grid cell has only a single usage type, the same data format will be used but the list will only contain 1 object of length 1. For example, the following represents the NAICS attribute for a grid cell solely devoted to "54" (Professional, Scientific and Technical Services).
 
 ```json
 {
@@ -58,8 +47,7 @@ In most cases, the type specification will not require such a detailed level of 
       "P": 1,
       "use": [
         {
-          "P": 1,
-          "use": "54"
+          "1": "54"
         }
       ]
     }
@@ -81,8 +69,7 @@ Below are some examples of CityScope types. These can be copy and pasted or modi
       "P": 1,
       "use": [
         {
-          "P": 1,
-          "use": "1120"
+          "1": "1120"
         }
       ]
     }
@@ -97,8 +84,7 @@ Below are some examples of CityScope types. These can be copy and pasted or modi
       "P": 0.1,
       "use": [
         {
-          "P": 1,
-          "use": "4451"
+          "1": "4451"
         }
       ]
     },
@@ -112,17 +98,15 @@ Below are some examples of CityScope types. These can be copy and pasted or modi
       "P": 0.1,
       "use": [
         {
-          "P": 1,
-          "use": "2150"
+          "1": "2150"
         }
       ]
     },
     {
-      "P": 1,
+      "P": 0.9,
       "use": [
         {
-          "P": 1,
-          "use": "1120"
+          "1": "1120"
         }
       ]
     }
