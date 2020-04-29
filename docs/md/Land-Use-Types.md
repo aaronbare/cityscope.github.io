@@ -17,8 +17,8 @@ A single grid-cell may contain multiple LBCS and multiple NAICS on different flo
       "P": 0.3,
       "use": [
         {
-          "0.5": "541310",
-          "0.5": "541330"
+          "541310": 0.5,
+          "541330": 0.5
         }
       ]
     },
@@ -26,9 +26,9 @@ A single grid-cell may contain multiple LBCS and multiple NAICS on different flo
       "P": 0.7,
       "use": [
         {
-          "0.3": "23",
-          "0.4": "42",
-          "0.3": "61"
+          "23": 0.3,
+          "42": 0.4,
+          "61": 0.3
         }
       ]
     }
@@ -47,7 +47,7 @@ In most cases, the type specification will not require such a detailed level of 
       "P": 1,
       "use": [
         {
-          "1": "54"
+          "54": 1
         }
       ]
     }
@@ -69,7 +69,7 @@ Below are some examples of CityScope types. These can be copy and pasted or modi
       "P": 1,
       "use": [
         {
-          "1": "1120"
+          "1120": 1
         }
       ]
     }
@@ -84,7 +84,7 @@ Below are some examples of CityScope types. These can be copy and pasted or modi
       "P": 0.1,
       "use": [
         {
-          "1": "4451"
+          "4451": 1
         }
       ]
     },
@@ -98,7 +98,7 @@ Below are some examples of CityScope types. These can be copy and pasted or modi
       "P": 0.1,
       "use": [
         {
-          "1": "2150"
+          "2150": 1
         }
       ]
     },
@@ -106,7 +106,7 @@ Below are some examples of CityScope types. These can be copy and pasted or modi
       "P": 0.9,
       "use": [
         {
-          "1": "1120"
+          "1120": 1
         }
       ]
     }
